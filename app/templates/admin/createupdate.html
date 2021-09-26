@@ -1,0 +1,15 @@
+{% extends "admin/base.html" %}
+
+{% block content %}
+<div class="container-sm">
+<hr>
+<h3 class="text-primary"> Update Blog Heading</h3>
+<form action="/admin/createupdate/{{left.id}}" method='POST'>
+<input type="text" class="form-control my-2" name="skill_heading" placeholder="subhead"value="{{left.skill_heading}}">
+<input type="text" class="form-control my-2" name="skill_desc" placeholder="heading"value="{{left.skill_desc}}">
+<input type="submit" class="btn btn-primary btn-lg" value=" Skill Heading Update">
+<hr>
+</form>
+
+
+{% endblock %}

@@ -1,0 +1,54 @@
+{% extends "admin/base.html" %}
+
+{% block content %}
+<div class="container bg-dark bg-gradient">
+<hr>
+<div class="row">
+<h3 class="text-primary">Add Skill </h3>
+<div class="col-12">
+<form action="/admin/skill" method='POST'>
+    <input type="text" class="form-control my-2" name="ski_name" placeholder=" skill name ">
+    <input type="text" class="form-control my-2" name="ski_persantage" placeholder="skill persantage ">
+    <input type="submit" class="btn btn-primary" value="Add  Skill">
+<hr>
+</form>
+</div>
+<hr>
+<div class="col-12">
+<h3 class="text-warning">Skill </h3>
+<table class="table">
+    <thead>
+        <tr>
+            <th class="text-warning">id</th>
+            <th class="text-warning">skill name</th>
+            <th class="text-warning">skill persantage</th>
+            <th class="text-warning">Actions</th>
+        </tr>
+    </thead>
+    <hr>
+</div>
+<div class="col align-self-end">
+    <tbody>
+        {% for skill in skills %}
+
+        <tr>
+            <td class="text-primary"  scope="row">{{skill.id}}</td>
+            <td class="text-primary">{{skill.ski_name}}</td>
+            <td class="text-primary">{{skill.ski_persantage}}</td>
+
+            <td>
+                <a href="/admin/createdelete/{{skill.id}}"> <i class="fas fa-trash-alt"></i></a>
+                <a href="/admin/createupdate/{{skill.id}}"> <i class="fas fa-edit"></i></a>
+            </td>
+        </tr>
+
+        {% endfor %}
+    </tbody>
+</table>
+     </div>
+   </div>
+</div>
+
+
+
+{% endblock %}

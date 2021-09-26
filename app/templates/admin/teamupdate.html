@@ -1,0 +1,16 @@
+{% extends "admin/base.html" %}
+
+{% block content %}
+<div class="container-sm">
+<hr>
+<h3 class="text-primary"> Update Skill</h3>
+<form action="/admin/teamupdate/{{team.id}}" method='POST' enctype="multipart/form-data" >
+<input type="file" class="form-control my-2" name="commenter_img" placeholder="img"value="{{team.commenter_img}}">
+<input type="text" class="form-control my-2" name="commenter_name" placeholder="name"value="{{team.commenter_name}}">
+<input type="text" class="form-control my-2" name="commenter_desc" placeholder="desc"value="{{team.commenter_desc}}">
+<input type="submit" class="btn btn-primary btn-lg" value=" Team  Update">
+<hr>
+</form>
+
+
+{% endblock %}
